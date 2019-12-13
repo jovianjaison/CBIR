@@ -1,0 +1,3 @@
+Brute force matcher combined with knn match for k=2 gives min dist and second min dist for ratio test
+Ratio Test
+	It best-dist / second-best-dist
