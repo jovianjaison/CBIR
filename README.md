@@ -2,13 +2,19 @@
 
 ### Dataset used:
   Wang 1k dataset having 10 image classes.
+  https://drive.google.com/open?id=1dzywtP3PWx3PJcLfvZ_1K3i61Hcu3Ysp
 
 ### Steps:
   1.Use Google Cloud Vision API for getting image labels.
+  
   2.Finiding correlation between labels and getting text based search accuracy.
+  
   3.Using Block Truncation Coding (BTC) and TSnBTC (Thepade's Sorted n-ary Block Truncation Coding) for getting color based    features.
+  
   4.Using LBP for texture based features.
+  
   5.Using CNN to obatain a feature vector.
+  
   6.Trying various compbinations of feature vectors to get maximum accuracy.
 
 
@@ -18,7 +24,6 @@
 
 ### The 'CNN + Segementation' contains convolutional neural nework architecture for feature extraction.In it the wang_config_load contains implementation of Mask RCNN for a custom object.
 
-### The 'csv_files' contains label data along with correlation and precision results.
 
 ### Features Employed for Image indexing:
  * Color
@@ -34,22 +39,14 @@
  * YUV
 
 
-### Feature Extraction Methods Used:
+### Feature Extraction Methods Used for content:
  * Multilevel BTC
  * Multilevel TSnBTC
  * Fusion of BTC and TSnBTC
+ * Different CNN architectures 
 
-
-
-### Performance Evaluation parameters:
- * kaur2016_paper4
- 	* Sensitivity
- 	* Specificity
- 	* Retrieval Score
- 	* Error rate
- 	* Accuracy
-
-
+### Feature Extraction Methods Used for text:
+ * DSSM 
 
 ### Current BEST Results for CBIR using color and texture features:
 
@@ -62,7 +59,32 @@ Fusion of LBP with BTC and TSBTC:
 | TSBTC17-LUV  | TSBTC3-LBP-LUV | 42.1%         |
 | TSBTC17-LUV  | BTC2-LBP-LUV   | 41.67%        |
 
-### CBIR Systems:
+
+### Current Results for CBIR using CNN:
+
+| Architecture    | Acuuracy      | Merge Accuracy| 
+| :---            | :---:         | :---:         |
+| Conv-MaxPx2     | 84.86	  | 94.12         |
+| Conv-MaxPx3     | 83.7	  | 92.59         |
+| Conv-MaxPx4     | 84.01         | 93.44         |
+| VGG             | 61.58  	  | 90.43         |
+| Inveptionv3     | 30.93   	  | 90            |
+| MobiNet         | 42.9   	  | 87.99         |
+| ResNet50        | 32.11   	  | 90.05         |
+
+Merge accuracy is combination of text and CNN based feature vectors
+
+### Current Results for Label features:
+
+| Technique                                          | Acuuracy      |  
+| :---                                               | :---:         |   
+| Using Api results                                  | 91.23	     |  
+| 5 Top synonyms using DSSM for each api keyword     | 87.04	     | 
+| 10 Top synonyms using DSSM for each api keyword    | 86.13         | 
+| 20 Top synonyms using DSSM for each api keyword    | 82.15         | 
+
+
+### CBIR Systems available today:
  * MARS (employing feature weighting)
  * MindReader (employing complex feature weighting)
  * QCluster (employing probablistic models)
@@ -70,16 +92,5 @@ Fusion of LBP with BTC and TSBTC:
  * VisualSeek 
  * NeTra (Toolbox for navigating large Image Databases)
 
-### Ranking for SIFT:
-	* As BFMatcher uses descriptor from 1st image and calculates euclidean distance with all descrriptors of 2nd image, then we can represent each descriptor on 128 dimensions. Then we can apply kNN to find what's the probability of that descriptor to belong to a particular image.
-		* To use kNN we will use 128 bin arry as 128 features and image ID as label.
-		* For every image find euclidean distance of every descriptor with every other descriptor in space.
-		* Loop k from 1 - 10,000.
-			* Get probabilities of every descriptor match with the query image.
-			* Sort them in descending.
-			* Select top 100.
-			* Find Recall.
-		* Plot graph of every recall vs k.
-		* Select best k.
-	* Content-Based_Image_Retrieval_using_SIFT
+
 
