@@ -11,3 +11,7 @@ Using a DSSM model for creating an embedding vector for each label(keyword) in t
 4.The synonyms_corr.csv has corr coeff for each keyword.
 
 5.Precision-synonyms_corr.csv contains overall precision.1000th row has avg precision.
+
+Drive link:
+https://drive.google.com/drive/folders/1syAtILE6BcZmtnVKCcpl3j7tSFESo-Ps?usp=sharing
+Drive contains generated csv files
