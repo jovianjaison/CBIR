@@ -12,7 +12,7 @@
   6.Trying various compbinations of feature vectors to get maximum accuracy.
 
 
-### The 'results.md' contains these results.
+### The [RESULTS.md](RESULTS.md) contains all results.
 
 ### 'main_files' contains code for btc, tsbctc, sift and for combination of feature vectors.
 
@@ -51,20 +51,16 @@
 
 
 
-### Current Results:
- * TSnBTC-kLUV-n-17: 40.68 
- * BTC-kLUV-n-3: 41.64
+### Current BEST Results for CBIR using color and texture features:
 
+Fusion of LBP with BTC and TSBTC:
 
-### Fusion of TSnBTC and BTC
-###### BTC-ColorSpace BTC-Level TSnBTC-Colorspace TSnBTC-n
- 1.  kLUV 3  kLUV 17
- 2. YCbCr 4  kLUV 14
- 3. YCbCr 3  kLUV 16
- 4.  kLUV 2  kLUV 11
- 5.  kLUV 4  kLUV 21
-
-
+| method 1     | method 2       | Acuuracy      | 
+| :---         |     :---:      |          ---: |
+| BTC3-LUV     | TSBTC3-LBP-LUV | 43.7%         |
+| BTC3-LUV     | BTC2-LBP-LUV   | 42.64%        |
+| TSBTC17-LUV  | TSBTC3-LBP-LUV | 42.1%         |
+| TSBTC17-LUV  | BTC2-LBP-LUV   | 41.67%        |
 
 ### CBIR Systems:
  * MARS (employing feature weighting)
