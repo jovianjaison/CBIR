@@ -70,9 +70,10 @@
     - [RGB/btc.py](main_files/BTC/RGB/btc.py) - code for applying BTC on RGB color space 
     - [YCbCr/btc.py](main_files/BTC/YCbCr/btc.py) - code for applying BTC on YCbCr color space
     - [kLUV/btc.py](main_files/BTC/kLUV/btc.py) - code for applying BTC on LUV color space
- 
-  Similar structure for [TSBTC](main_files/TSBTC)
-  
+  - Similar structure for [TSBTC](main_files/TSBTC)
+  - [LBP-BTC](main_files/LBP-BTC) - code to extract texture features by applying BTC on LBP patterns  
+  - [LBP-TSBTC](main_files/LBP-TSBTC) - code to extract texture features by applying TSBTC n-ary on LBP patterns
+  - [fusion-btc-tsnbtc](main_files/fusion-btc-tsnbtc) - code to combine btc and tsbtc features
   
   
   
