@@ -1,4 +1,16 @@
 ### Fusion of query and context based image retrieval
+In today's information age, image data especially is geneated in large quantities.There exist efficient techniques for generation and storage of this image data.However, efficient and accurate retrieval systems are still under development.Generally image search engines relied completely on file names or meta data associated with images.This technique can lead to inaccurate results because of human error in naming files, ambiguity in giving file names as each image can be percieved differently by different individuals.CBIR(Content Based Image Retrieval Systems) were an answer to this problem.They took into consideration features like shape, color and texture from images.Accurate and practical CBIR systems are still under development.We propose a fusion system that uses a feature vector that is a combination of content and keyword features for effective searches.This system may yield more accurate results.  
+
+### Features
+ * More accurate image based search results.
+ * No need to manually label/annotate images.
+ * Works with unlabelled/unnamed images.
+ * Easy to use.
+ 
+### Possible Applications
+ * Efficient and accurate image search engines.
+ * System for creating datasets from huge data dumps
+
 
 ### Dataset used:
   Wang 1k dataset having 10 image classes.
